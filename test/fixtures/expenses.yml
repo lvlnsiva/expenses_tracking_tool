@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  item_name: MyString
+  category_id: 1
+  cost: 1.5
+  spent_on: 2013-09-19 19:12:11
+  comments: MyText
+  user_id: 1
+
+two:
+  item_name: MyString
+  category_id: 1
+  cost: 1.5
+  spent_on: 2013-09-19 19:12:11
+  comments: MyText
+  user_id: 1
