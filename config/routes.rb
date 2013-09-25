@@ -1,5 +1,5 @@
 ExpenseTrackTool::Application.routes.draw do
-  
+  get "welcome/index"
 
   get "expenses_create" => "expenses#new", :as => "expenses_create"
   get "log_in" => "users#new", :as => "log_in"

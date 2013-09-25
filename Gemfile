@@ -22,9 +22,15 @@ group :assets do
   
   gem "devise", "~> 3.1.0"
   
+  gem 'jquery-rails'
+  
+  gem 'bootstrap-datepicker-rails'
+  
+  
 end
 
-gem 'jquery-rails'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

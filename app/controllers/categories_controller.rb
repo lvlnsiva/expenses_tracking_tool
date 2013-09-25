@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   end
   
   def create
+    puts params[:category].inspect
     @category = Category.new(params[:category])
     if @category.save
       redirect_to root_url, :notice => "New category saved"
