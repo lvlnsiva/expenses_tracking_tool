@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-datepicker
+//= require jquery-ui
+//= require_tree .
+$(function(){
+    $('#datepicker').datepicker();
+      showButtonPanel: true
+});

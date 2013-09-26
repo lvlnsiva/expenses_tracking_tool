@@ -6,7 +6,7 @@ class ExpensesController < ApplicationController
       @expense=Expense.new params[:expense]
       respond_to do |format|
         if @expense.save
-          format.html { redirect_to(@expense, :notice => 'todo was successfully created.') }
+          format.html { redirect_to(@expense, :notice => 'expense was successfully created.') }
           format.json { render json: @expense, status: :created, location: @expense}
         else
           format.html { render action: "new"}
