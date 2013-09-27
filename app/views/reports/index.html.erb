@@ -1,0 +1,29 @@
+<div class = "hero-unit">
+  <%= form_tag report_path do %>
+        <p>
+          <%= label_tag :spent_on_from_date %>
+         <%= text_field_tag :spent_on_from_date %>
+        </p>
+        <p>
+          <%= label_tag :spent_on_to_date %>
+         <%= text_field_tag :spent_on_to_date %>
+        </p>
+        <p>
+          <%= label_tag :category_id %>
+          <%= select_tag 'category_id', options_for_select([["--All--", ""]] + Category.select("id, name").collect{|c| [c.name, c.id]}) %>
+        </p>        
+        <%= submit_tag "submit", :class => "btn btn-primary" %>
+  <% end %>
+</div>
+
+</div>
+ <script>
+    $(function() {
+        $( "#spent_on_from_date" ).datepicker({
+            showButtonPanel: true
+        });
+        $( "#spent_on_to_date" ).datepicker({
+            showButtonPanel: true
+        });
+    });
+ </script>

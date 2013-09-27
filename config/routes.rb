@@ -1,10 +1,11 @@
 ExpenseTrackTool::Application.routes.draw do
-  get "welcome/index"
-
+  get "sign_up" => "users#new", :as => "sign_up"
   get "expenses_create" => "expenses#new", :as => "expenses_create"
-  get "log_in" => "users#new", :as => "log_in"
-  get "category_create" => "categories#new", :as => "category_create"
-  root :to => "categories#new" 
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "category_new" => "categories#new", :as => "category_new"
+  post "category_create" => "categories#create", :as => "category_create"
+  get "report" => "reports#index", :as => "report"
+  post "report_show" => "report#show", :as => "report_show"
   resources :categories
   resources :users
   resources :expenses
