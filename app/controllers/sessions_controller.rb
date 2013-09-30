@@ -3,19 +3,9 @@ class SessionsController < ApplicationController
   end
   
   def create
-    user = User.authenticate(params[:email], params[:password])
-    if user.nil?
-      redirect_to log_in_path, :alert => "Please enter valid credentials"
-    else
-      session[:user_id] = user.id
-      puts "user.is_random_pwd => #{user.is_random_pwd}"
-      puts "user.is_random_pwd == true => #{user.is_random_pwd == true}"
-      if user.is_random_pwd == true
-        redirect_to root_url, :notice => "welcome "  +  user.email
-      else
-        redirect_to root_url, :notice => "welcome "  +  user.email
-      end
-    end
+    @user = User.find(params[:email], params[:password])
+    redirect_to log_in_path, :notice => "welcome "
+    
   end
  
 

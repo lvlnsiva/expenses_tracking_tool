@@ -2,8 +2,9 @@ class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
   end
+  
   def create 
-      @expense=Expense.new params[:expense]
+      @expense = Expense.new params[:expense]
       respond_to do |format|
         if @expense.save
           format.html { redirect_to(@expense, :notice => 'expense was successfully created.') }

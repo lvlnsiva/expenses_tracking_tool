@@ -4,6 +4,8 @@ class ReportsController < ApplicationController
   end
   
   def show
-    @expense = Expense.where("spent_on_from_date > ? and spent_on_to_date < ?", params[:spent_on_from_date],params[:spent_on_to_date])
+    @expenses = Expense.where("spent_on >= ? and spent_on <= ?", Date.parse(params[:spent_on_from_date]), Date.parse(params[:spent_on_to_date]))
   end
+  
+ 
 end

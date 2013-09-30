@@ -15,6 +15,7 @@
 //= require jquery-ui
 //= require_tree .
 $(function(){
-    $('#datepicker').datepicker();
+    $('#datepicker').datepicker({
       showButtonPanel: true
+     });
 });
