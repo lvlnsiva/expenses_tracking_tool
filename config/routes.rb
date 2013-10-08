@@ -1,6 +1,7 @@
 ExpenseTrackTool::Application.routes.draw do
+  root :to => "users#new"
   get "sign_up" => "users#new", :as => "sign_up"
-  post "user_create" => "users#create", :as => "user_create"
+  post "users_create" => "users#create", :as => "users_create"
   get "expenses_new" => "expenses#new", :as => "expenses_new"
   post "expenses_create" => "expenses#create", :as => "expenses_create"
   get "log_in" => "sessions#new", :as => "log_in"

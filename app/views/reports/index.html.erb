@@ -10,7 +10,7 @@
         </p>
         <p>
           <%= label_tag :category_id %>
-          <%= select_tag 'category_id', options_for_select([["--All--", ""]] + Category.select("id, name").collect{|c| [c.name, c.id]}) %>
+          <%= select_tag 'category_id', options_for_select([["--All--", ""]] + Category.select("id, name").collect{ |c| [c.name, c.id] }) %>
         </p>        
         <%= submit_tag "submit", :class => "btn btn-primary" %>
   <% end %>
