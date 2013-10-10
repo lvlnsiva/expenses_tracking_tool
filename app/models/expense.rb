@@ -1,7 +1,7 @@
 class Expense < ActiveRecord::Base
   belongs_to :category
   attr_accessible :category_id, :comments, :cost, :item_name, :spent_on, :user_id
-
+  self.per_page = 5
 
   
   def validate_spent_on 

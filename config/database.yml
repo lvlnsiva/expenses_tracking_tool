@@ -10,7 +10,7 @@ development:
   database: Expense_track_tool_development
   pool: 5
   username: root
-  password: 
+  password: redhat
   socket: /var/lib/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -23,7 +23,7 @@ test:
   database: Expense_track_tool_test
   pool: 5
   username: root
-  password: 
+  password: redhat
   socket: /var/lib/mysql/mysql.sock
   
   
@@ -34,5 +34,5 @@ production:
   database: Expense_track_tool_production
   pool: 5
   username: root
-  password: 
+  password: redhat
   socket: /var/lib/mysql/mysql.sock

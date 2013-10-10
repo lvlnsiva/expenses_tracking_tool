@@ -27,6 +27,9 @@ group :assets do
   
   gem 'jquery_datepicker'
   
+  gem 'will_paginate', '~> 3.0'
+  
+  
 
   
  

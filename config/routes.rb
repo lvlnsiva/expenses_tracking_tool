@@ -2,17 +2,23 @@ ExpenseTrackTool::Application.routes.draw do
   root :to => "users#new"
   get "sign_up" => "users#new", :as => "sign_up"
   post "users_create" => "users#create", :as => "users_create"
-  get "expenses_new" => "expenses#new", :as => "expenses_new"
-  post "expenses_create" => "expenses#create", :as => "expenses_create"
+  #get "expenses_new" => "expenses#new", :as => "expenses_new"
+  #post "expenses_create" => "expenses#create", :as => "expenses_create"
   get "log_in" => "sessions#new", :as => "log_in"
   post "log_in" => "sessions#create", :as => "log_in"
-  get "category_new" => "categories#new", :as => "category_new"
-  post "category_create" => "categories#create", :as => "category_create"
-  get "report" => "reports#index", :as => "report"
-  post "report_show" => "reports#show", :as => "report_show"
-  resources :categories
-  resources :users
+  #get "category_new" => "categories#new", :as => "category_new"
+  #post "category_create" => "categories#create", :as => "category_create"
+  resources :reports do
+    collection do
+      get :index
+      get :result
+    end
+  end
+  resources :categories do
+    resources :expenses
+  end
   resources :expenses
+  resources :users
 end
 
   # The priority is based upon order of creation:
