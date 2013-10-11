@@ -4,12 +4,14 @@ class CategoriesController < ApplicationController
   end
   
   def create
-    puts params[:category].inspect
     @category = Category.new(params[:category])
     if @category.save
-      redirect_to category_create_path, :notice => "New category saved"
+      redirect_to categories_path, :notice => "New category saved"
     else
       render 'new'
     end
+  end
+  def index
+    @categories = Category.all
   end
 end
