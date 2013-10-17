@@ -1,6 +1,8 @@
 class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
+    @expense.category_id = params[:category_id] if params[:category_id]
+    puts "params >>>>>>>>>>> #{params.inspect}"
   end
   
   def create 

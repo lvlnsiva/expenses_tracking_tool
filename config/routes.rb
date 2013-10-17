@@ -5,7 +5,7 @@ ExpenseTrackTool::Application.routes.draw do
   #get "expenses_new" => "expenses#new", :as => "expenses_new"
   #post "expenses_create" => "expenses#create", :as => "expenses_create"
   get "log_in" => "sessions#new", :as => "log_in"
-  post "log_in" => "sessions#create", :as => "log_in"
+  post "log_in" => "sessions#create", :as => "login"
   get "category_new" => "categories#new", :as => "category_new"
   post "category_create" => "categories#create", :as => "category_create"
   resources :reports do
@@ -22,6 +22,7 @@ ExpenseTrackTool::Application.routes.draw do
   resources :users
   resources :sessions
 end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -79,4 +80,3 @@ end
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-

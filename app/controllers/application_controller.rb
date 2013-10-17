@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-
+  helper_method :current_user, :user_is_logged_in?, :require_login
   
   private
 
@@ -13,8 +13,5 @@ class ApplicationController < ActionController::Base
     !!session[:user_id]
   end
    def require_login
-    unless user_is_logged_in?
-      redirect_to log_in_url, :alert => "You must be logged in to access this section" # halts request cycle
-    end
    end
 end
