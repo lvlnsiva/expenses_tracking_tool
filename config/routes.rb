@@ -1,11 +1,13 @@
 ExpenseTrackTool::Application.routes.draw do
+  devise_for :users
+
   root :to => "users#new"
-  get "sign_up" => "users#new", :as => "sign_up"
-  post "users_create" => "users#create", :as => "users_create"
+  #get "sign_up" => "users#new", :as => "sign_up"
+  #post "users_create" => "users#create", :as => "users_create"
   #get "expenses_new" => "expenses#new", :as => "expenses_new"
   #post "expenses_create" => "expenses#create", :as => "expenses_create"
-  get "log_in" => "sessions#new", :as => "log_in"
-  post "log_in" => "sessions#create", :as => "login"
+  #get "log_in" => "sessions#new", :as => "log_in"
+  #post "log_in" => "sessions#create", :as => "login"
   get "category_new" => "categories#new", :as => "category_new"
   post "category_create" => "categories#create", :as => "category_create"
   resources :reports do
@@ -14,14 +16,27 @@ ExpenseTrackTool::Application.routes.draw do
       get :result
     end
   end
-  resources :categories do
-    resources :expenses
-  end
+ 
+    resources :categories do
+      resources :expenses
+    end
   resources :expenses
     
-  resources :users
-  resources :sessions
+  resources :users do
+    collection do
+      get 'sign_up' => :new
+      post 'sign_up' => :create
+    end
+  end
+  resources :sessions do
+    collection do
+      get 'log_in' => :new
+      post 'sign_in' => :create
+      get 'logout' => :destroy
+    end
+  end
 end
+
 
 
   # The priority is based upon order of creation:
@@ -49,7 +64,6 @@ end
   #       get 'sold'
   #     end
   #   end
-
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
