@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   
   def create
     @category = Category.new(params[:category])
+    @category.user = current_user
     if @category.save
       redirect_to categories_path, :notice => "New category saved"
     else
@@ -12,6 +13,6 @@ class CategoriesController < ApplicationController
     end
   end
   def index
-    @categories = Category.all
+    @categories = current_user ? current_user.categories : Category.all
   end
 end

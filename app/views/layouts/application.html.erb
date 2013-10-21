@@ -12,14 +12,17 @@
         <p class="alert"><%= alert %></p>
     <div class="navbar-inner"> 
           <ul class="nav">
-            <li><%= link_to 'Home', sign_up_users_path %></li>
-            <li><%= link_to 'Expense Lists', expenses_path %></li>
-            <li><%= link_to 'Report', reports_path %></li>
-            <li><%= link_to 'Category', category_new_path %></li>
-            <li><%= link_to 'Sign Up', sign_up_users_path %></li>
-            <li><%= link_to 'Log in', log_in_sessions_path %></li>
-            <li><%= link_to 'Log out', logout_sessions_path %></li>
-          </ul>
+                <li><%= link_to 'Home', new_user_registration_path %></li>
+                <li><%= link_to 'Expense Lists', expenses_path %></li>
+                <li><%= link_to 'Report', reports_path %></li>
+                <li><%= link_to 'Category', categories_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to'Logout', destroy_user_session_path, :method=> 'delete' %></li> 
+            <%else%>
+              <li><%= link_to 'Login', new_user_session_path %></li> 
+              <li><%= link_to'Sign Up', new_user_registration_path %></li>
+            <%end%> 
+         </ul>
     </div>
  </div>
 
