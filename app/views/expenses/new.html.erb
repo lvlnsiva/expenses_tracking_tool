@@ -1,4 +1,4 @@
-<div class = "hero-unit">
+<div class="hero-unit" style="margin:auto;width: 70%;">
  <%= form_for @expense do |f| %>
     <% if  @expense.errors.any? %>
       <div id="error_explanation" style= color:red;>
@@ -26,19 +26,18 @@
           <%= f.label :spent_on %>
          <%= f.text_field :spent_on %>
         </p>
-        <p class="desc">
+        <p>
           <%= f.label :comments %>
-          <%= f.text_area :comments, :required => true %>
+          <%= f.text_area(:comments, {:cols => 10, :rows => 5})%>
         </p>
     <%= f.submit "create", :class => "btn btn-primary"%>
   <% end %>
-  
 </div>
- <script>
-    $(function() {
-        $( "#expense_spent_on" ).datepicker({
-            showButtonPanel: true,
-            dateFormat: "dd/mm/yy"
-         });
-    });
- </script>
+<script>
+$(function() {
+  $("#expense_spent_on").datepicker({
+        showButtonPanel: true,
+        dateFormat: "dd/mm/yy"
+  });
+});
+</script>

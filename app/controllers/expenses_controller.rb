@@ -1,6 +1,4 @@
 class ExpensesController < ApplicationController
-  before_filter :authenticate_user!
-  
   def new
     @expense = Expense.new
     @expense.category_id = params[:category_id] if params[:category_id]
@@ -9,6 +7,7 @@ class ExpensesController < ApplicationController
   
   def create 
       @expense = Expense.new params[:expense]
+      @expense.user = current_user
       respond_to do |format|
         if @expense.save
           format.html { redirect_to(@expense, :notice => 'expense was successfully created.') }
@@ -24,6 +23,6 @@ class ExpensesController < ApplicationController
     @expense = Expense.find(params[:id])
   end
   def index
-    @expenses = Expense.all
+    @expenses = current_user ? current_user.expenses : Expense.all
   end
 end

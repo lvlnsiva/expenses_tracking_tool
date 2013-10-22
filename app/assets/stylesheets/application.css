@@ -10,3 +10,7 @@
  *
  *= require_tree .
  */
+#ui-datepicker-div
+{
+    display: none;
+}

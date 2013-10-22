@@ -1,18 +1,42 @@
-<table class="table table-bordered">
+<div class="hero-unit" style="margin:auto;width: 70%;">
+<% if current_user %>
+  <table class="table table-bordered">
       <tr>
        <th>item name</th>
        <th>category name</th>
        <th>cost</th>
        <th>spent on</th>
       </tr>
-   <% if @expenses.present? %>
-     <% @expenses.each do |expense| %>
-       <tr>
-         <td><%= expense.item_name %></td>
-         <td><%= expense.category.try(:name) %></td>
-         <td><%= expense.cost %></td>
-         <td><%= expense.spent_on %></td>
-       </tr>
-     <% end %>
-   <% end %>
-</table>
+   
+       <div style = "margin-left:900px">
+      <%= link_to 'new', new_expense_path, :class => "btn btn-primary" %>
+      </div>
+      <br />   
+       <% if @expenses.present? %>
+         <% @expenses.each do |expense| %>
+           <tr>
+             <td><%= expense.item_name %></td>
+             <td><%= expense.category.try(:name) %></td>
+             <td><%= expense.cost %></td>
+             <td><%= expense.spent_on %></td>
+           </tr>
+           
+         <% end %>
+    </table>
+         <% else %>
+        <h3 style="color: red">You didnot enter the expenses, please enter your monthly expenses through button "new"</h3>
+       <% end %>
+  <% else %>
+ <div class="container" width="300px">
+     <h1 style= "color:green">Expense Tracking :</h1>
+<h3>
+ Expense Tracking is a full-featured finance software that you can carry in your pocket.
+It is a powerful and easy to use program that will help you track and understand your personal finance.
+Expense Tracking brings all your financial accounts together,
+categorizes your transactions, tracks all your bills,
+lets you set budgets and helps you achieve your savings goals. In just minutes, 
+you’ll see where your money is going and where you could save money.
+</h3>
+ </P>
+<% end %>
+</div>

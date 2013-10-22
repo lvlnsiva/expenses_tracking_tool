@@ -1,20 +1,34 @@
-<div class = "hero-unit" style="width: 100%">
+<script>
+    $(function() {
+        $( "#spent_on_from_date" ).datepicker({
+            showButtonPanel: true,
+            dateFormat: "dd/mm/yy"
+        });
+        $( "#spent_on_to_date" ).datepicker({
+            showButtonPanel: true,
+            dateFormat: "dd/mm/yy"
+        });
+    });
+</script>  
+<div class="hero-unit" style="margin:auto;width: 70%;">
   <%= form_tag "/reports/result", :method => :get do %>
-        <div style="width:20%;float:left;">
+        <div style="width:25%;float:left;">
           <%= label_tag :spent_on_from_date %>
          <%= text_field_tag :spent_on_from_date, params[:spent_on_from_date] %>
         </div>
-        <div style="width:20%;float:left;">
+        <div style="width:25%;float:left;">
           <%= label_tag :spent_on_to_date %>
          <%= text_field_tag :spent_on_to_date, params[:spent_on_to_date] %>
         </div>
-        <div style="width:20%;float:left;">
+        <div style="width:25%;float:left;">
           <%= label_tag :category_id %>
           <%= select_tag 'category_id', options_for_select([["--All--", ""]] + Category.select("id, name").collect{ |c| [c.name, c.id] }, params[:category_id]) %>
-        </div>    
+        </div>
+        <div>
+            <br />
           <%= submit_tag "submit", :class => "btn btn-primary" %>
-  <% end %>
-</div>
+        </div>
+   <% end %>
 <table class="table table-bordered">
       <tr>
        <th>item name</th>
@@ -34,15 +48,4 @@
    <% end %>
 </table>
 <%= will_paginate @expenses if @expenses %>
-  <script>
-    $(function() {
-        $( "#spent_on_from_date" ).datepicker({
-            showButtonPanel: true,
-            dateFormat: "dd/mm/yy"
-        });
-        $( "#spent_on_to_date" ).datepicker({
-            showButtonPanel: true,
-            dateFormat: "dd/mm/yy"
-        });
-    });
-  </script>
+</div>

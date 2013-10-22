@@ -7,17 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="navbar navbar-inverse">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+    <div class="navbar navbar-inverse" style="width: 100%">
     <div class="navbar-inner"> 
           <ul class="nav">
-                <li><%= link_to 'Home', new_user_registration_path %></li>
+                <li><%= link_to 'Home', root_path %></li>
                 <li><%= link_to 'Expense Lists', expenses_path %></li>
                 <li><%= link_to 'Report', reports_path %></li>
                 <li><%= link_to 'Category', categories_path %></li>
             <% if user_signed_in? %>
-              <li><%= link_to'Logout', destroy_user_session_path, :method=> 'delete' %></li> 
+              <li><%= link_to'Logout', destroy_user_session_path, :method=> 'delete' %></li>
             <%else%>
               <li><%= link_to 'Login', new_user_session_path %></li> 
               <li><%= link_to'Sign Up', new_user_registration_path %></li>
@@ -25,8 +23,32 @@
          </ul>
     </div>
  </div>
+<div id="flash">
+   <% unless flash[:alert].blank? %>
+     <div class="alert">
+         <a href="#" data-dismiss="alert" class="close">×</a>
+         <%= flash[:alert] %>
+     </div>
+   <% end %>
+   <% if content_for?(:message) %>
+        <div class="alert" style ="margin:auto; width: 80px">
+            <a href="#" data-dismiss="alert" class="close">×</a>
+            <%= yield(:message) %>
+        </div>="alert" class="close">×</a>
+            <%= yield(:message) %>
+        </div>
+    <%end %>
+    
+    <% unless flash[:notice].blank? %>
+    <div class="alert alert-info" style = "<%= 'border-top:0;text-align: center;' if flash[:alert] || yield(:message) %>">
+        <a href="#" data-dismiss="alert" class="close">×</a>
+        <%= flash[:notice] %>
+    </div>
+    <% end %>
+</div>
 
 <%= yield %>
+
 
 </body>
 </html>

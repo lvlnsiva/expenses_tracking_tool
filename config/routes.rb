@@ -3,7 +3,7 @@ ExpenseTrackTool::Application.routes.draw do
     # root :to => "devise/registrations#new"
   # end
   devise_for :users
-  root :to => "reports#index"
+  root :to => "expenses#index"
 
   
   #get "sign_up" => "users#new", :as => "sign_up"
