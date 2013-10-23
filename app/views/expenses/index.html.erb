@@ -1,15 +1,15 @@
-<div class="hero-unit" style="margin:auto;width: 70%;">
+<div style="margin:auto;width: 70%;">    
 <% if current_user %>
+<h2>Expenses list</h2>
   <table class="table table-bordered">
       <tr>
        <th>item name</th>
        <th>category name</th>
        <th>cost</th>
        <th>spent on</th>
-      </tr>
-   
-       <div style = "margin-left:900px">
-      <%= link_to 'new', new_expense_path, :class => "btn btn-primary" %>
+      </tr>  
+       <div style = "margin-left:700px">
+      <%= link_to 'new expense', new_expense_path, :class => "btn btn-primary" %>
       </div>
       <br />   
        <% if @expenses.present? %>

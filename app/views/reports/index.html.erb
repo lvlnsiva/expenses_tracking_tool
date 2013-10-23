@@ -10,7 +10,7 @@
         });
     });
 </script>  
-<div class="hero-unit" style="margin:auto;width: 70%;">
+<div class="hero-unit" style="margin:auto;width: 80%;height:60px;line-height:30px;padding:10px">
   <%= form_tag "/reports/result", :method => :get do %>
         <div style="width:25%;float:left;">
           <%= label_tag :spent_on_from_date %>
@@ -22,13 +22,14 @@
         </div>
         <div style="width:25%;float:left;">
           <%= label_tag :category_id %>
-          <%= select_tag 'category_id', options_for_select([["--All--", ""]] + Category.select("id, name").collect{ |c| [c.name, c.id] }, params[:category_id]) %>
+          <%= select_tag 'category_id', options_for_select([["--All--", ""]] + current_user.categories("id, name").collect{ |c| [c.name, c.id] }, params[:category_id]) %>
         </div>
-        <div>
-            <br />
+        <div style="padding: 24px">
           <%= submit_tag "submit", :class => "btn btn-primary" %>
         </div>
    <% end %>
+</div>
+<div style="padding-left: 110px;padding-right: 110px;padding-top: 20px">
 <table class="table table-bordered">
       <tr>
        <th>item name</th>

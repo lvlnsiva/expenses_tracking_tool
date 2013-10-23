@@ -10,7 +10,7 @@
     <div class="navbar navbar-inverse" style="width: 100%">
     <div class="navbar-inner"> 
           <ul class="nav">
-                <li><%= link_to 'Home', root_path %></li>
+                <li style="padding-left:120px"><%= link_to 'Home', root_path %></li>
                 <li><%= link_to 'Expense Lists', expenses_path %></li>
                 <li><%= link_to 'Report', reports_path %></li>
                 <li><%= link_to 'Category', categories_path %></li>
@@ -48,7 +48,12 @@
 </div>
 
 <%= yield %>
-
-
+<div class="navbar navbar-fixed-bottom">
+    <div class="navbar-inner">
+        <div class="width-constraint clearfix" style="background: black; font-family: Verdana;height: 40px">
+            <p class="muted credit"><center>YourApp v1.0.0, ©2013 • CONFIDENTIAL ALL RIGHTS RESERVED</center></p>
+        </div>
+    </div>
+</div>
 </body>
 </html>

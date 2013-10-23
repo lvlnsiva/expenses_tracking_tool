@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   #attr_accessible :email, :password, :password_confirmation
   has_many :expenses
   has_many :categories
-  
   #attr_accessor :password
   
   #validates_confirmation_of :password
