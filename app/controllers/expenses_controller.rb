@@ -25,4 +25,5 @@ class ExpensesController < ApplicationController
   def index
     @expenses = current_user ? current_user.expenses : Expense.all
   end
+  
 end

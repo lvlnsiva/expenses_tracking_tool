@@ -29,7 +29,7 @@
         </div>
    <% end %>
 </div>
-<div style="padding-left: 110px;padding-right: 110px;padding-top: 20px">
+<div style="padding-left: 130px;padding-right: 130px;padding-top: 20px">
 <table class="table table-bordered">
       <tr>
        <th>item name</th>
@@ -38,14 +38,17 @@
        <th>spent on</th>
       </tr>
    <% if @expenses.present? %>
+      <% total = 0 %>
      <% @expenses.each do |expense| %>
+         <% total += expense.cost %>
        <tr>
          <td><%= expense.item_name %></td>
          <td><%= expense.category.try(:name) %></td>
          <td><%= expense.cost %></td>
          <td><%= expense.spent_on %></td>
        </tr>
-     <% end %>
+     <% end %>    
+         <tr><td colspan = 4>the total cost of all expenses = <%= total %></td></tr>
    <% end %>
 </table>
 <%= will_paginate @expenses if @expenses %>

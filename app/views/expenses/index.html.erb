@@ -1,17 +1,18 @@
-<div style="margin:auto;width: 70%;">    
+<div style="margin:auto;width: 90%;">    
 <% if current_user %>
-<h2>Expenses list</h2>
+     <div style = "margin-left:10px;display: inline;padding-bottom: 20px">
+       <h2 style="display: inline;padding-right: 800px;">Expenses</h2>  
+       <%= link_to 'new expense', new_expense_path, :class => "btn btn-primary" %>
+     </div>
+     <br />
+     <div style="padding-top: 10px"> 
   <table class="table table-bordered">
       <tr>
        <th>item name</th>
        <th>category name</th>
        <th>cost</th>
        <th>spent on</th>
-      </tr>  
-       <div style = "margin-left:700px">
-      <%= link_to 'new expense', new_expense_path, :class => "btn btn-primary" %>
-      </div>
-      <br />   
+      </tr>
        <% if @expenses.present? %>
          <% @expenses.each do |expense| %>
            <tr>
@@ -19,10 +20,10 @@
              <td><%= expense.category.try(:name) %></td>
              <td><%= expense.cost %></td>
              <td><%= expense.spent_on %></td>
-           </tr>
-           
+           </tr>           
          <% end %>
     </table>
+    </div>
          <% else %>
         <h3 style="color: red">You didnot enter the expenses, please enter your monthly expenses through button "new"</h3>
        <% end %>

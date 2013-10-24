@@ -1,7 +1,7 @@
 <div class="hero-unit" style="margin:auto;width: 70%;">
     <h2>New Expense creation form</h2>
     <div style = "margin-left:500px">
-      <%= link_to 'new', new_category_path, :class => "btn btn-primary" %>
+      <%= link_to 'new category', new_category_path, :class => "btn btn-primary" %>
     </div>
  <%= form_for @expense do |f| %>
     <% if  @expense.errors.any? %>
