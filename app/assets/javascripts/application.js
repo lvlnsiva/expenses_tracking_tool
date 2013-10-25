@@ -19,3 +19,11 @@ $(function(){
       showButtonPanel: true
      });
 });
+
+$(function () {
+  $('.popover-test').hover(function() {
+      $(this).popover('show')
+  }, function() {
+        $(this).popover('hide')
+    });
+});

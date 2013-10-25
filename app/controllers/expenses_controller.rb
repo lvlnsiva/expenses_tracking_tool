@@ -23,7 +23,10 @@ class ExpensesController < ApplicationController
     @expense = Expense.find(params[:id])
   end
   def index
-    @expenses = current_user ? current_user.expenses : Expense.all
+    if current_user
+      @expenses = current_user.expenses
+      @expenses = @expenses.paginate(page: params[:page])
+    end
   end
   
 end

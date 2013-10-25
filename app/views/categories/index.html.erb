@@ -13,7 +13,9 @@
    <% if @categories.present? %>
      <% @categories.each do |category| %>
        <tr>
-         <td><%= category.name %> <%= link_to 'new expense', new_category_expense_path(category) %></td>
+         <td>
+             <%= category.name %> <%= link_to 'new expense', new_category_expense_path(category), :class => "popover-test", :rel => "popover", :title => "This is a link", :"data-content" =>"create a new expense through this link" %>
+             </td>       
          <td><%= category.description %></td>
        </tr>
      <% end %>

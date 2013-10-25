@@ -32,10 +32,10 @@
 <div style="padding-left: 130px;padding-right: 130px;padding-top: 20px">
 <table class="table table-bordered">
       <tr>
-       <th>item name</th>
-       <th>category name</th>
-       <th>cost</th>
-       <th>spent on</th>
+       <th>Item name</th>
+       <th>Category name</th>
+       <th>Cost</th>
+       <th>Spent On</th>
       </tr>
    <% if @expenses.present? %>
       <% total = 0 %>
@@ -48,7 +48,7 @@
          <td><%= expense.spent_on %></td>
        </tr>
      <% end %>    
-         <tr><td colspan = 4>the total cost of all expenses = <%= total %></td></tr>
+         <tr><td colspan = 4>The total cost of all expenses = <%= total %></td></tr>
    <% end %>
 </table>
 <%= will_paginate @expenses if @expenses %>

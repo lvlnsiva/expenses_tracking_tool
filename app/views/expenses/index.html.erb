@@ -5,6 +5,7 @@
        <%= link_to 'new expense', new_expense_path, :class => "btn btn-primary" %>
      </div>
      <br />
+     <% if @expenses.present? %>
      <div style="padding-top: 10px"> 
   <table class="table table-bordered">
       <tr>
@@ -12,8 +13,7 @@
        <th>category name</th>
        <th>cost</th>
        <th>spent on</th>
-      </tr>
-       <% if @expenses.present? %>
+      </tr>      
          <% @expenses.each do |expense| %>
            <tr>
              <td><%= expense.item_name %></td>
@@ -23,9 +23,13 @@
            </tr>           
          <% end %>
     </table>
+         <%= will_paginate @expenses if @expenses %>
     </div>
          <% else %>
-        <h3 style="color: red">You didnot enter the expenses, please enter your monthly expenses through button "new"</h3>
+         <div class="alert">
+             <%= flash[:alert] %>
+             <h4>You didnot enter the expenses, please enter your monthly expenses through button "new expense"</h4>
+         </div>
        <% end %>
   <% else %>
  <div class="container" width="300px">
