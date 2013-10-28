@@ -29,6 +29,7 @@
         </div>
    <% end %>
 </div>
+<% if @expenses.present? %>
 <div style="padding-left: 130px;padding-right: 130px;padding-top: 20px">
 <table class="table table-bordered">
       <tr>
@@ -37,7 +38,6 @@
        <th>Cost</th>
        <th>Spent On</th>
       </tr>
-   <% if @expenses.present? %>
       <% total = 0 %>
      <% @expenses.each do |expense| %>
          <% total += expense.cost %>

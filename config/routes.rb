@@ -2,7 +2,7 @@ ExpenseTrackTool::Application.routes.draw do
   # authenticated :user do
     # root :to => "devise/registrations#new"
   # end
-  devise_for :users
+  devise_for :users, :controllers => { :sessions => 'sessions' }
   root :to => "expenses#index"
 
   

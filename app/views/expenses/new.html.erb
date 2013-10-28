@@ -1,7 +1,6 @@
 <div class="hero-unit" style="margin:auto;width: 70%;">
-    <h2 style="padding-bottom: 20px">New Expense creation</h2>
-    <div style = "margin-left:200px">
-      <h4 style="display: inline;padding-right: 20px">to create a new category</h4><%= link_to 'new category', new_category_path, :class => "btn btn-primary" %>
+    <div style="padding-top: 0px">
+        <h2 style="padding-top: 0px">New Expense creation</h2>
     </div>
  <%= form_for @expense do |f| %>
     <% if  @expense.errors.any? %>
@@ -14,26 +13,29 @@
         </ul>
       </div>
     <% end %>
-        <p>
+        <span>
           <%= f.label :category_id %>
-          <%= f.collection_select :category_id, current_user.categories, :id, :name, option = {:selected => @expense.category_id} %>
-        </p>
-        <p>
+          <span>
+            <%= f.collection_select :category_id, current_user.categories, :id, :name, option = {:selected => @expense.category_id}, {:style =>"float:left" } %>
+            <h4 style="display: inline;padding-left: 30px">create a new category through this button</h4><%= link_to 'new category', new_category_path, :class => "btn btn-primary", :style => "display:inline" %>
+          </span>
+        </span>  
+         <p style="padding-top: 20px">
           <%= f.label :item_name %>
           <%= f.text_field :item_name, :required => true %>
-        </p>
-        <p>
+         </p>
+         <p>
           <%= f.label :cost %>
           <%= f.text_field :cost, :required => true %>
-        </p>
-        <p>
+         </p>
+         <p>
           <%= f.label :spent_on %>
          <%= f.text_field :spent_on %>
-        </p>
-        <p>
+         </p>
+         <p>
           <%= f.label :comments %>
           <%= f.text_area(:comments, {:cols => 10, :rows => 5})%>
-        </p>
+         </p>
     <%= f.submit "create", :class => "btn btn-primary"%>
   <% end %>
 </div>
