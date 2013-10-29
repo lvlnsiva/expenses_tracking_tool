@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
   #validates_presence_of :email
   
  
+  def name
+    return "#{first_name} #{last_name}" if first_name.present? || last_name.present?
+    email
+  end
   #def self.authenticate(email, password) 
     #user = find_by_email(email) 
 

@@ -461,7 +461,7 @@ a:focus {
 
 .row-fluid .span5 {
   width: 40.42553191489362%;
-  *width: 40.37234042553192%;
+  *width: 40.37234042553192%;data-color="yellow"
 }
 
 .row-fluid .span4 {
@@ -4901,7 +4901,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inverse .navbar-search .search-query:focus,
-.navbar-inverse .navbar-search .search-query.focused {
+.navbar-inverse .navbar-search .search-qlink_to 'Text', '/link', title: 'some title', rel: 'tooltip'uery.focused {
   padding: 5px 15px;
   color: #333333;
   text-shadow: 0 1px 0 #ffffff;
@@ -4939,7 +4939,7 @@ input[type="submit"].btn.btn-mini {
   color: #ffffff;
   background-color: #040404;
   *background-color: #000000;
-}
+}link_to 'Text', '/link', title: 'some title', rel: 'tooltip'
 
 .navbar-inverse .btn-navbar:active,
 .navbar-inverse .btn-navbar.active {
@@ -4973,7 +4973,8 @@ input[type="submit"].btn.btn-mini {
 }
 
 .pagination {
-  margin: 20px 0;
+  margin: 10px 0px 0px;
+  float: right;
 }
 
 .pagination ul {
@@ -4994,9 +4995,9 @@ input[type="submit"].btn.btn-mini {
   display: inline;
 }
 
-.pagination ul > li > a,
+.pagination ul > li > a,link_to 'Text', '/link', title: 'some title', rel: 'tooltip'
 .pagination ul > li > span {
-  float: left;
+  float: right;
   padding: 4px 12px;
   line-height: 20px;
   text-decoration: none;
@@ -5044,7 +5045,7 @@ input[type="submit"].btn.btn-mini {
           border-top-right-radius: 4px;
   -webkit-border-bottom-right-radius: 4px;
           border-bottom-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
+  -moz-border-radius-topright: 4px;link_to 'Text', '/link', title: 'some title', rel: 'tooltip'
   -moz-border-radius-bottomright: 4px;
 }
 
@@ -5052,7 +5053,7 @@ input[type="submit"].btn.btn-mini {
   text-align: center;
 }
 
-.pagination-right {
+.pagination-right {link_to 'Text', '/link', title: 'some title', rel: 'tooltip'
   text-align: right;
 }
 
@@ -5068,7 +5069,7 @@ input[type="submit"].btn.btn-mini {
           border-bottom-left-radius: 6px;
   -webkit-border-top-left-radius: 6px;
           border-top-left-radius: 6px;
-  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomleft: 6px;link_to 'Text', '/link', title: 'some title', rel: 'tooltip'
   -moz-border-radius-topleft: 6px;
 }
 
@@ -5475,7 +5476,7 @@ input[type="submit"].btn.btn-mini {
 .popover.top .arrow:after {
   bottom: 1px;
   margin-left: -10px;
-  border-top-color: #ffffff;
+  border-top-color: red;
   border-bottom-width: 0;
 }
 
@@ -5483,15 +5484,15 @@ input[type="submit"].btn.btn-mini {
   top: 50%;
   left: -11px;
   margin-top: -11px;
-  border-right-color: #999;
-  border-right-color: rgba(0, 0, 0, 0.25);
+  border-right-color: red;
+  border-right-color: rgba(1, 0, 0, 0.25);
   border-left-width: 0;
 }
 
 .popover.right .arrow:after {
   bottom: -10px;
   left: 1px;
-  border-right-color: #ffffff;
+  border-right-color: black;
   border-left-width: 0;
 }
 

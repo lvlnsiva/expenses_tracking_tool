@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ExpenseTrackTool</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+      <title>ExpenseTrackTool</title>
+      <%= stylesheet_link_tag    "application", :media => "all" %>
+      <%= javascript_include_tag "application" %>
+      <%= csrf_meta_tags %>
+  </head>
+  <body>
     <div class="navbar navbar-inverse" style="width: 100%">
     <div class="navbar-inner"> 
           <ul class="nav">
@@ -19,7 +19,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %><b class="caret"></b>
               </a>
                 <ul class="dropdown-menu">
-                        <li><%= link_to "Settings", edit_user_registration_path(current_user) %></li>
+                        <li><%= link_to "Edit Profile", edit_user_registration_path(current_user.id) %></li>
                         <li class="divider"></li>
                         <li>
                          <%= link_to'Logout', destroy_user_session_path, :method=> 'delete' %>
@@ -58,12 +58,12 @@
 </div>
 
 <%= yield %>
-<div class="navbar navbar-fixed-bottom">
+  <div class="navbar navbar-fixed-bottom">
     <div class="navbar-inner">
-        <div class="width-constraint clearfix" style="background: black; font-family: Verdana;height: 40px">
-            <p class="muted credit"><center>YourApp v1.0.0, ©2013 • CONFIDENTIAL ALL RIGHTS RESERVED</center></p>
-        </div>
+      <div class="width-constraint clearfix" style="background: black; font-family: Verdana;height: 40px">
+        <p class="muted credit"><center>YourApp v1.0.0, ©2013 • CONFIDENTIAL ALL RIGHTS RESERVED</center></p>
+      </div>
     </div>
-</div>
-</body>
+  </div>
+  </body>
 </html>
