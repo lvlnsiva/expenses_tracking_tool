@@ -35,6 +35,13 @@ gem 'jquery_datepicker'
 gem 'will_paginate', '~> 3.0'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
   
   
 
