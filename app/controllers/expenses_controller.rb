@@ -1,11 +1,11 @@
 class ExpensesController < ApplicationController
-  def new
+  before_filter :authenticate_user!
+  def new   
     @expense = Expense.new
     @expense.category_id = params[:category_id] if params[:category_id]
-    puts "params >>>>>>>>>>> #{params.inspect}"
   end
   
-  def create 
+  def create
       @expense = Expense.new params[:expense]
       @expense.user = current_user
       respond_to do |format|
